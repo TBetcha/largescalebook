@@ -1,31 +1,31 @@
 /** @format */
 //STOPPED AT PG. 75
-import Vue from 'vue';
-import Vuex from 'vuex';
-import { IItemState } from '@/models/store/IItemState';
-import { IItem } from '@/models/items/IItem';
+import Vue from 'vue'
+import Vuex from 'vuex'
+import { IItemState } from '@/models/store/IItemState'
+import { IItem } from '@/models/items/IItem'
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 
 const state: IItemState = {
 	loading: false,
 	items: [],
-};
+}
 
 export default new Vuex.Store({
 	state: state,
 	mutations: {
 		loadingItems(state: IItemState) {
-			state.loading = true;
+			state.loading = true
 		},
 		loadedItems(state: IItemState, items: IItem[]) {
-			state.items = items;
-			state.loading = false;
+			state.items = items
+			state.loading = false
 		},
 	},
 	actions: {
 		loadItems({ commit, state }) {
-			commit('loadingItems');
+			commit('loadingItems')
 			const mockItems: IItem[] = [
 				{
 					id: 1,
@@ -34,7 +34,7 @@ export default new Vuex.Store({
 				},
 				{
 					id: 2,
-					name: 'Item 3',
+					name: 'Item 2',
 					selected: false,
 				},
 				{
@@ -42,11 +42,11 @@ export default new Vuex.Store({
 					name: 'Item 3',
 					selected: false,
 				},
-			];
+			]
 			setTimeout(() => {
-				commit('loadedItems', mockItems);
-			}, 1000);
+				commit('loadedItems', mockItems)
+			}, 1000)
 		},
 	},
 	modules: {},
-});
+})
