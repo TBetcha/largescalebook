@@ -1,8 +1,9 @@
 /** @format */
 
-import { IItem } from '@/models/items/IItem';
+import { IItem } from '@/models/items/IItem'
 
 export interface IItemState {
-	items: IItem[];
-	loading: boolean;
+	items: IItem[]
+	loading: boolean
+	selectingItem: boolean
 }

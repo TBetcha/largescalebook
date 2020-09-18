@@ -10,6 +10,7 @@ Vue.use(Vuex)
 const state: IItemState = {
 	loading: false,
 	items: [],
+	selectingItem: false,
 }
 
 export default new Vuex.Store({
@@ -21,6 +22,12 @@ export default new Vuex.Store({
 		loadedItems(state: IItemState, items: IItem[]) {
 			state.items = items
 			state.loading = false
+		},
+		selectingItem(state: IItemState) {
+			state.selectingItem = true
+		},
+		selectedItem(state: IItemState) {
+			state.selectingItem = false
 		},
 	},
 	actions: {
